@@ -37,17 +37,12 @@ export { fun }
 ## 使用
 
 ```js
-const {ProxyLinkedModuleRequest , ZStackComponentsOptionsProxy} = require("proxy-linked-module-request")
+const {ProxyLinkedModuleRequest} = require("proxy-linked-module-request")
 
 const webpackConfig = {
   plugins: [
     // linked 的 package 的完整路径 : /dir/xx/package
     new ProxyLinkedModuleRequest({linkedPackagePath}),
-    /**
-     * ZStackComponentsOptionsProxy是zstack 组件库代理的一些参数，调试
-     * zstack componnents的时候使用
-     * */
-    new ZStackComponentsOptionsProxy({linkedPackagePath}),
   ],
 }
 ```
