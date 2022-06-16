@@ -1,15 +1,22 @@
 {
   "name": "proxy-linked-module-request",
   "version": "1.0.0",
-  "description": "",
+  "description": "proxy webpack linked module inner request to origin node_modules",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "webpack",
+    "link",
+    "proxy"
+  ],
   "author": "",
   "license": "ISC",
   "peerDependencies": {
     "webpack": ">=5.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.73.0"
   }
 }

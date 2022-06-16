@@ -1,6 +1,10 @@
-## 代理 linked (yarn link package2) package2 对 node_modules 的请求
+## 代理 webpack linked (yarn link package2) package2 对 node_modules 的请求
 
-本地调试 package1
+使用 webpack 编译
+
+package1 本地调试 package2
+//package1
+import 'package2'
 
 ```bash
 yarn link package2
@@ -33,11 +37,17 @@ export { fun }
 ## 使用
 
 ```js
-const ProxyLinkedModuleRequest = require("proxy-linked-module-request")
+const {ProxyLinkedModuleRequest , ZStackComponentsOptionsProxy} = require("proxy-linked-module-request")
+
 const webpackConfig = {
   plugins: [
-    // linked 的 package 的路径
-    new ProxyLinkedModuleRequest(linkedPackagePath),
+    // linked 的 package 的完整路径 : /dir/xx/package
+    new ProxyLinkedModuleRequest({linkedPackagePath}),
+    /**
+     * ZStackComponentsOptionsProxy是zstack 组件库代理的一些参数，调试
+     * zstack componnents的时候使用
+     * */
+    new ZStackComponentsOptionsProxy({linkedPackagePath}),
   ],
 }
 ```
